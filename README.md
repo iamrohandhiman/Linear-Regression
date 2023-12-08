@@ -40,3 +40,26 @@ where:
 
 The function iterates through each data point, computes the predicted value using the linear regression model, calculates the squared difference between the predicted and actual values, and accumulates these squared differences. Finally, it divides the total by twice the number of data points (\(2m\)) to obtain the mean squared error.
 
+# Vectorized Computing Cost Function
+
+## Description:
+This code cell defines a vectorized version of the `computing_cost` function, referred to as `computing_cost_vectorised`. The vectorized implementation takes advantage of NumPy operations to improve efficiency.
+
+## Parameters:
+- `x`: NumPy array representing the feature values (numpy.ndarray, shape: (m, ) where m is the number of samples).
+- `y`: NumPy array representing the corresponding label values (numpy.ndarray, shape: (m, ) where m is the number of samples).
+- `w`: Weight parameter of the linear regression model (float).
+- `b`: Bias parameter of the linear regression model (float).
+
+## Returns:
+- `total_cost`: The computed cost using the mean squared error formula (float).
+
+## Vectorized Implementation:
+The cost function (mean squared error) is computed using vectorized operations in NumPy:
+
+$$J(w, b) = \frac{1}{2m} \sum_{i=1}^{m} (w \cdot x_i + b - y_i)^2 $$
+
+The vectorized version simplifies the computation by removing the need for explicit loops. It takes advantage of NumPy's ability to perform element-wise operations on entire arrays.
+
+
+
